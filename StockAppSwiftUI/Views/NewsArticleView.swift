@@ -25,13 +25,11 @@ struct NewsArticleView: View {
                 VStack(alignment: .leading) {
                     
                     Text("Top News")
-                        .foregroundColor(Color.white)
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .padding(2)
                     
                     Text("From News")
-                        .foregroundColor(Color.white)
                         .font(.body)
                         .fontWeight(.bold)
                         .padding(2)
@@ -50,18 +48,17 @@ struct NewsArticleView: View {
                         HStack {
                             VStack(alignment: .leading) {
                                 Text(article.publication)
-                                    .foregroundColor(Color.white)
                                     .font(.custom("Arial", size: 22))
                                     .fontWeight(.bold)
                                 Text(article.title)
-                                    .foregroundColor(Color.white)
                                     .font(.custom("Arial", size: 22))
                             }
                             Spacer()
                             
                             URLImage(URL(string: article.imageURL)!, content: { image in
-                                image.resizable()}).frame(width: 100, height: 100)
-                        }
+                                image.resizable()})
+                                .frame(width: 100, height: 100)
+                        }.padding(12)
                         
                     }
                 }.frame(maxWidth: .infinity)
@@ -70,7 +67,7 @@ struct NewsArticleView: View {
             }
             
         }.frame(width: screenSize.width, height: screenSize.height)
-            .background(Color(red: 27/255, green: 28/255, blue: 30/255))
+            .background(Color(red: 211/255, green: 211/255, blue: 211/255))
             .cornerRadius(20)
         
     }
